@@ -1,0 +1,36 @@
+
+<h1 style="text-align: center">Sign<span class="six" >U</span>p</h1>
+<div  layout="row" layout-align="center">
+
+<div layout="column">
+    <br/>
+    <md-content class="four">
+        <md-input-container class="md-icon-float" >
+            <!-- Usefloating label instead of placeholder -->
+            <label>Name</label>
+            <md-icon md-svg-src="img/icons/svg/account-box.svg" class="name"></md-icon>
+            <input ng-model="user.name1" type="text">
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <md-icon md-svg-src="img/icons/svg/phone-in-talk.svg"></md-icon>
+            <input ng-model="user.phone" type="text" placeholder="Phone Number">
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <!-- Use floating placeholder instead of label -->
+            <md-icon md-svg-src="img/icons/svg/email.svg" class="email"></md-icon>
+            <input ng-model="user.email1" type="text" placeholder="Email (required)" ng-required="true">
+        </md-input-container>
+        <md-input-container class="md-icon-float">
+            <md-icon md-svg-src="img/icons/svg/security.svg" style="display:inline-block;"></md-icon>
+            <input ng-model="user.password2" type="password" placeholder="password" >
+        </md-input-container>
+        <md-button class=" md-primary md-raised" ng-click="signup.goToNxt()" style="box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);
+-moz-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);
+-webkit-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);">Register</md-button>
+    </md-content>
+
+</div>
+    </div>
+
+
+

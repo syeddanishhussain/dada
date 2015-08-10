@@ -1,0 +1,22 @@
+{
+  "name": "latestChatapp",
+  "version": "0.0.0",
+  "authors": [
+    "Danish hussain <syeddanish_hussain@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-material": "~0.10.0",
+    "firebase": "~2.2.7",
+    "angularfire": "~1.1.2",
+    "angular-new-router": "~0.5.3"
+  }
+}

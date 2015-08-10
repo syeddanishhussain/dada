@@ -1,0 +1,50 @@
+.inputdemoIcons .inputIconDemo {
+    min-height: 48px; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+    color: green; }
+.inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
+    color: dodgerblue; }
+.inputdemoIcons md-input-container.md-input-invalid > md-icon.email, .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
+    color: red; }
+
+.carddemoBasicUsage md-card {
+    min-height: 150px; }
+
+
+.one{
+    padding: 1px;
+
+}
+.two{
+    font-size: 150%;
+}
+.three{
+    height: 50px;
+}
+body{
+    width:1360px;
+    height:1000px;
+    background-color:#e9e9e9;
+    margin:0;
+    padding:0;
+
+}
+.five{
+    background-color: #e9e9e9;
+}
+.four{
+    background-color: #e9e9e9;
+}
+.six{
+    color: #186dee;
+    font-size: larger;
+}
+.seven{
+    color: #186dee;;
+}
+.eight{
+    margin-top: 25px;
+}
+.nine{
+    margin-left: 25px;
+}
