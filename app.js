@@ -4,7 +4,7 @@
 var app = angular.module("app",["ngMaterial","ngNewRouter","firebase","app.main","app.signup","app.signin","app.home","app.view"])
 app.controller("AppController",function($scope,$router,$firebaseObject,$rootScope,$location){
     $router.config([
-        {path:"/", component:"home"},
+        {path:"/", component:"main"},
         {path:"/home",component:"home"},
         {path:"/view",component:"view"},
         {path:"/signin",component:"signin"},
@@ -24,7 +24,21 @@ app.controller("AppController",function($scope,$router,$firebaseObject,$rootScop
 
     $scope.goToHome=function(){
         $location.path("/home")
-    }
+    };
+    $scope.anonymous=function(){
+    var ref = new Firebase("https://labchatapp.firebaseio.com");
+    ref.authAnonymously(function(error, authData) {
+        if (error) {
+            console.log("Login Failed!", error);
+        } else {
+            console.log("Authenticated successfully with payload:", authData);
+            alert("You are a anonymous now!")
+            $location.path("/view");
+            $rootScope.$apply();
+
+        }
+    });
+    };
     $scope.facebook=function(){
 
         ref.authWithOAuthPopup("facebook", function(error, authData) {
@@ -48,9 +62,48 @@ app.controller("AppController",function($scope,$router,$firebaseObject,$rootScop
                 console.log("Authenticated successfully with payload:", authData);
                 $location.path("/view");
                 $rootScope.$apply();
+
             }
         });
+    };
+    $scope.github = function() {
+        var ref = new Firebase("https://labchatapp.firebaseio.com");
+        ref.authWithOAuthPopup("github", function (error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+                $location.path("/view");
+                $rootScope.$apply();
+
+            }
+        });
+    };
+    $scope.yoursignup= function(){
+
+
+                $location.path("/signup");
+
+
     }
+    /*$scope.custom = function(){
+
+        var FirebaseTokenGenerator = require("firebase-token-generator");
+        var tokenGenerator = new FirebaseTokenGenerator("peN358SZYuoqWRBUL99QjP1OGQWSS2PXbtW6gues");
+        var token = tokenGenerator.createToken({uid: "1", some: "arbitrary", data: "here"});
+        var ref = new Firebase("https://labchatapp.firebaseio.com/");
+        ref.authWithCustomToken(AUTH_TOKEN, function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Login Succeeded!", authData);
+                $location.path("/view");
+                $rootScope.$apply();
+            }
+        });
+
+    };
+*/
 
 });
 

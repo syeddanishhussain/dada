@@ -36,7 +36,7 @@ describe('angular 1.x "Confirm Unsaved" App', function() {
       expect(element(by.model('editPost.newContent')).getAttribute('value')).toBe('I wrote this first.');
     });
 
-    it('should let you navigate back to the main', function () {
+    it('should let you navigate back to the index', function () {
       var back = element(by.linkText('Back'));
       back.click();
 

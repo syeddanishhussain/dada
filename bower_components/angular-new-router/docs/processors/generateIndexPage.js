@@ -5,7 +5,7 @@ var path = require('canonical-path');
 /**
  * @dgProcessor generateIndexPageProcessor
  * @description
- * This processor creates a doc that will be rendered as the main page for the app
+ * This processor creates a doc that will be rendered as the index page for the app
  */
 module.exports = function generateIndexPageProcessor() {
   return {

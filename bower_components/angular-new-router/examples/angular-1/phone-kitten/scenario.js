@@ -4,8 +4,8 @@ var appRoot = 'examples/angular-1/phone-kitten';
 
 describe('PhoneCat App', function() {
 
-  // it('should redirect main.html to main.html#/phones', function() {
-  //   browser.get('main.html');
+  // it('should redirect index.html to index.html#/phones', function() {
+  //   browser.get('index.html');
   //   browser.getLocationAbsUrl().then(function(url) {
   //     expect(url.split('#')[1]).toBe('/phones');
   //   });
@@ -15,7 +15,7 @@ describe('PhoneCat App', function() {
   describe('Phone list view', function() {
 
     beforeEach(function() {
-      browser.get(appRoot + '/main.html#/phones');
+      browser.get(appRoot + '/index.html#/phones');
     });
 
 
@@ -76,7 +76,7 @@ describe('PhoneCat App', function() {
   describe('Phone detail view', function() {
 
     beforeEach(function() {
-      browser.get(appRoot + '/main.html#/phones/nexus-s');
+      browser.get(appRoot + '/index.html#/phones/nexus-s');
     });
 
 

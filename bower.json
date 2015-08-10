@@ -17,6 +17,7 @@
     "angular-material": "~0.10.0",
     "firebase": "~2.2.7",
     "angularfire": "~1.1.2",
-    "angular-new-router": "~0.5.3"
+    "angular-new-router": "~0.5.3",
+    "firebase-token-generator": "~2.0.0"
   }
 }
