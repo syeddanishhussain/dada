@@ -4,7 +4,7 @@
 var app = angular.module("app",["ngMaterial","ngNewRouter","firebase","app.main","app.signup","app.signin","app.home","app.view"])
 app.controller("AppController",function($scope,$router,$firebaseObject,$rootScope,$location){
     $router.config([
-        {path:"/", component:"main"},
+        {path:"/", component:"home"},
         {path:"/home",component:"home"},
         {path:"/view",component:"view"},
         {path:"/signin",component:"signin"},

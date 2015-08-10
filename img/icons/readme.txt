@@ -1,5 +1,5 @@
 Thanks for visiting MaterialDesignIcons.com
 Check back often for new icons and follow @MaterialIcons for updates.
 
-Icon: security
-By: Google @Google
+Icon: github-circle
+By: Austin Andrews @Templarian
