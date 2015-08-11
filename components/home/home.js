@@ -1,15 +1,15 @@
 
 angular
-    .module('app.home', ['ngMaterial'])
-    .controller('HomeController', function($location) {
-        this.user = {
-            name: '',
-            email: '',
-            phone: '',
-            address: '',
-            password:''
-        };
-        this.goTo=function(){
-            $location.path("/view")
-        }
+    .module('app.home', ["ngMaterial","ngNewRouter","firebase"])
+    .controller('HomeController', function($rootScope,$location) {
+        var $scope=this;
+        //this.user = {
+        //    name: '',
+        //    email: '',
+        //    phone: '',
+        //    address: '',
+        //    password:''
+        //};
+
+
     });

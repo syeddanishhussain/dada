@@ -1,5 +1,6 @@
 
 <h1 style="text-align: center">Sign<span class="six" >U</span>p</h1>
+<form ng-submit="signup.gotoMysignup()" >
 <fieldset>
     <legend>Sign<span class="ten">Up</span></legend>
 <div  layout="row" layout-align="center" style="margin: 50px 130px">
@@ -11,28 +12,30 @@
             <!-- Usefloating label instead of placeholder -->
 
             <md-icon md-svg-src="img/icons/svg/account-box.svg" class="name"></md-icon>
-            <input ng-model="user.name1" type="text" placeholder="Name">
+            <input ng-model="signup.name2" type="text" placeholder="Name">
         </md-input-container>
-        <md-input-container class="md-icon-float">
-            <md-icon md-svg-src="img/icons/svg/phone-in-talk.svg"></md-icon>
-            <input ng-model="user.phone" type="text" placeholder="Phone Number">
-        </md-input-container>
+
         <md-input-container class="md-icon-float">
             <!-- Use floating placeholder instead of label -->
             <md-icon md-svg-src="img/icons/svg/email.svg" class="email"></md-icon>
-            <input ng-model="user.email1" type="text" placeholder="Email (required)" ng-required="true">
+            <input ng-model="signup.email2" type="text" placeholder="Email (required)" >
         </md-input-container>
         <md-input-container class="md-icon-float">
             <md-icon md-svg-src="img/icons/svg/security.svg" style="display:inline-block;"></md-icon>
-            <input ng-model="user.password2" type="password" placeholder="password" >
+            <input ng-model="signup.password3" type="password" placeholder="password" >
         </md-input-container>
-        <md-button class=" md-primary md-raised" ng-click="signup.goToNxt()" style="box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);
+        <md-input-container class="md-icon-float">
+            <md-icon md-svg-src="img/icons/svg/phone-in-talk.svg"></md-icon>
+            <input ng-model="signup.confirmpassword3" type="password" placeholder="Confirm password">
+        </md-input-container>
+        <input type="submit" class=" md-primary md-raised md-input md-button" value="SignUp"  style="box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);
 -moz-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);
--webkit-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);">Register</md-button>
+-webkit-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.50);">
     </md-content>
 
     </div>
 </div>
 
 </fieldset>
+</form>
 

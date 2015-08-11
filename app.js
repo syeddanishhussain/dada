@@ -1,47 +1,40 @@
 /**
  * Created by dell1 on 24/07/2015.
  */
-var app = angular.module("app",["ngMaterial","ngNewRouter","firebase","app.main","app.signup","app.signin","app.home","app.view"])
-app.controller("AppController",function($scope,$router,$firebaseObject,$rootScope,$location){
+var app = angular.module("app", ["ngMaterial", "ngNewRouter", "firebase", "app.main", "app.signup", "app.signin", "app.home", "app.view"])
+app.controller("AppController", function ($scope, $router, $firebaseObject, $firebaseArray, $rootScope, $location) {
     $router.config([
-        {path:"/", component:"main"},
-        {path:"/home",component:"home"},
-        {path:"/view",component:"view"},
-        {path:"/signin",component:"signin"},
-        {path:"/signup",component:"signup"}
+        {path: "/", component: "home"},
+        {path: "/home", component: "home"},
+        {path: "/view", component: "view"},
+        {path: "/signin", component: "signin"},
+        {path: "/signup", component: "signup"}
 
     ]);
 
-    var ref = new Firebase("https://labchatapp.firebaseio.com/hello/brother/danish/mohsin");
 
-    var users = ref.child("hello");
-    var user2 = users.child("brother/danish");
-    var user3 = user2.child("mohsin");
 
-    var path = user2.toString();
-    var syncObject  = $firebaseObject(ref);
+    var ref = new Firebase("https://labchatapp.firebaseio.com/");
+
+
+    var path = ref.toString();
+    var syncObject = $firebaseObject(ref);
     syncObject.$bindTo($scope, "user");
 
-    $scope.goToHome=function(){
+    $scope.goToHome = function () {
         $location.path("/home")
     };
-    $scope.anonymous=function(){
-    var ref = new Firebase("https://labchatapp.firebaseio.com");
-    ref.authAnonymously(function(error, authData) {
-        if (error) {
-            console.log("Login Failed!", error);
-        } else {
-            console.log("Authenticated successfully with payload:", authData);
-            alert("You are a anonymous now!")
-            $location.path("/view");
-            $rootScope.$apply();
+    $scope.anonymous = function () {
 
-        }
-    });
-    };
-    $scope.facebook=function(){
+                $location.path("/view");
+                $rootScope.$apply();
 
-        ref.authWithOAuthPopup("facebook", function(error, authData) {
+            }
+
+
+    $scope.facebook = function () {
+
+        ref.authWithOAuthPopup("facebook", function (error, authData) {
             if (error) {
                 console.log("Login Failed!", error);
             } else {
@@ -53,9 +46,9 @@ app.controller("AppController",function($scope,$router,$firebaseObject,$rootScop
             }
         });
     };
-    $scope.google = function(){
+    $scope.google = function () {
         var ref = new Firebase("https://labchatapp.firebaseio.com");
-        ref.authWithOAuthPopup("google", function(error, authData) {
+        ref.authWithOAuthPopup("google", function (error, authData) {
             if (error) {
                 console.log("Login Failed!", error);
             } else {
@@ -66,7 +59,7 @@ app.controller("AppController",function($scope,$router,$firebaseObject,$rootScop
             }
         });
     };
-    $scope.github = function() {
+    $scope.github = function () {
         var ref = new Firebase("https://labchatapp.firebaseio.com");
         ref.authWithOAuthPopup("github", function (error, authData) {
             if (error) {
@@ -79,31 +72,36 @@ app.controller("AppController",function($scope,$router,$firebaseObject,$rootScop
             }
         });
     };
-    $scope.yoursignup= function(){
 
 
-                $location.path("/signup");
 
 
-    }
-    /*$scope.custom = function(){
 
-        var FirebaseTokenGenerator = require("firebase-token-generator");
-        var tokenGenerator = new FirebaseTokenGenerator("peN358SZYuoqWRBUL99QjP1OGQWSS2PXbtW6gues");
-        var token = tokenGenerator.createToken({uid: "1", some: "arbitrary", data: "here"});
-        var ref = new Firebase("https://labchatapp.firebaseio.com/");
-        ref.authWithCustomToken(AUTH_TOKEN, function(error, authData) {
-            if (error) {
-                console.log("Login Failed!", error);
-            } else {
-                console.log("Login Succeeded!", authData);
-                $location.path("/view");
-                $rootScope.$apply();
-            }
-        });
+    $scope.yoursignup = function () {
+
+
+        $location.path("/signup");
+
 
     };
-*/
+    /*$scope.custom = function(){
+
+     var FirebaseTokenGenerator = require("firebase-token-generator");
+     var tokenGenerator = new FirebaseTokenGenerator("peN358SZYuoqWRBUL99QjP1OGQWSS2PXbtW6gues");
+     var token = tokenGenerator.createToken({uid: "1", some: "arbitrary", data: "here"});
+     var ref = new Firebase("https://labchatapp.firebaseio.com/");
+     ref.authWithCustomToken(AUTH_TOKEN, function(error, authData) {
+     if (error) {
+     console.log("Login Failed!", error);
+     } else {
+     console.log("Login Succeeded!", authData);
+     $location.path("/view");
+     $rootScope.$apply();
+     }
+     });
+
+     };
+     */
 
 });
 
