@@ -21,17 +21,32 @@
     <script src="./components/main/main.js"></script>
     <script src="./components/view/view.js"></script>
     <script src="./app.js"></script>
+
 </head>
 
 <body ng-app="app" ng-controller="AppController" >
-<header class="three" ><img src="img/36389.jpg" style="height: 200%; box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.25);
+
+
+<div style="background-color: #636363; height: 70px;box-shadow: 0px 2px 0px -1px rgba(0, 0, 0, 0.2), 1px 0px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);">
+    <div layout="row">
+<header class="three"><img src="img/36389.jpg" style="height: 70px;width: 120px; box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.25);
 -moz-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.25);
 -webkit-box-shadow: 0px 0px 10px 4px rgba(119, 119, 119, 0.25);" ng-click="goToHome()"></header>
+<div flex style="margin-left: 1050px;"><md-icon md-svg-src="img/icons/svg/message-text-outline.svg" class="name" style="padding: 15px;width: 17%;height: 13%;" "></md-icon><md-icon md-svg-src="img/icons/svg/flag.svg" class="name" style="margin-bottom: 5px;width: 17%; height: 13%"></md-icon><md-icon md-svg-src="img/icons/svg/account-plus.svg" class="name" style="margin-bottom: 5px;width: 17%; height: 13%; padding: 12px"></md-icon>
+        </div>
+    </div>
+</div>
 <div layout="row" layout-align="center" class="one">
-<div ng-viewport></div>
 
+
+    <div ng-viewport></div>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <!-- Place this tag right after the last button or just before your close body tag. -->
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
 </div>
 
 </body>
+
 </html>

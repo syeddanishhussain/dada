@@ -25,9 +25,21 @@ app.controller("AppController", function ($scope, $router, $firebaseObject, $fir
         $location.path("/home")
     };
     $scope.anonymous = function () {
-
+        var ref = new Firebase("https://labchatapp.firebaseio.com");
+        ref.authAnonymously(function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+                alert("You Are Anonymous Now!")
                 $location.path("/view");
                 $rootScope.$apply();
+            }
+        });
+
+
+
+
 
             }
 

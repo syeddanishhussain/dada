@@ -14,7 +14,7 @@ app.controller("SignupController", function ($rootScope, $location) {
 
 
 
-    var mysignup = new Firebase("https://labchatapp.firebaseio.com/SignedUpUsers/")
+    var mysignup = new Firebase("https://labchatapp.firebaseio.com/SignedUpUsers")
 
 
 
@@ -23,12 +23,14 @@ app.controller("SignupController", function ($rootScope, $location) {
 
 
         if ($scope.password3 === $scope.confirmpassword3) {
-            mysignup.push({
+
+            mysignup.child($scope.name2).update({
                 UName: $scope.name2,
                 UEmail: $scope.email2,
                 UPass: $scope.password3,
                 UC: $scope.confirmpassword3
-            })
+
+        });
             //$scope.mysignupArray.push(
             //    {UName: $scope.name2, UEmail: $scope.email2, UPass: $scope.password3, UC: $scope.confirmpassword3}
             //);

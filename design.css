@@ -20,6 +20,7 @@
 }
 .three{
     height: 50px;
+
 }
 body{
     width:100%;
@@ -51,4 +52,7 @@ body{
 .ten{
     color: #186dee;
     font-size: x-large;
+}
+header{
+    color: #004444;
 }
