@@ -5,6 +5,8 @@ var app = angular.module("app.signup", ["ngMaterial", "ngNewRouter", "firebase"]
 app.controller("SignupController", function ($rootScope, $location) {
 
     var $scope = this;
+    $scope.signin= true;
+    $scope.signup = true;
     //this.user = {
     //    name1: '',
     //    email1: '',
@@ -52,9 +54,17 @@ app.controller("SignupController", function ($rootScope, $location) {
     var login = false;
 
     $scope.Usignin = function(){
+        alert("daadsdsax")
+        mysignup.child($scope.password3).update({
+            Iname: $scope.name3,
+            Ipassword: $scope.password4
+
+        });
+        $scope.name3 = "",
+            $scope.password4 = ""
         for(var i = 0; i < $scope.mysignup.length; i++) {
-            var inputName = $scope.Iname === $scope.mysignup[i].UName;
-            var inputPas = $scope.Ipassword === $scope.mysignup[i].UPass;
+            var inputName = $scope.name3 === $scope.mysignup[i].name2;
+            var inputPas = $scope.password4 === $scope.mysignup[i].password3;
             if ((inputName) && (inputPas)) {
                 login = true;
                 break;
@@ -74,11 +84,6 @@ app.controller("SignupController", function ($rootScope, $location) {
 
 
     };
-
-
-
-
-
 
 
 });

@@ -13,7 +13,6 @@ app.controller("AppController", function ($scope, $router, $firebaseObject, $fir
     ]);
 
 
-
     var ref = new Firebase("https://labchatapp.firebaseio.com/");
 
 
@@ -50,6 +49,7 @@ app.controller("AppController", function ($scope, $router, $firebaseObject, $fir
             if (error) {
                 console.log("Login Failed!", error);
             } else {
+
                 console.log("Authenticated successfully with payload:", authData);
                 $location.path("/view");
                 $rootScope.$apply();
@@ -90,7 +90,6 @@ app.controller("AppController", function ($scope, $router, $firebaseObject, $fir
 
 
     $scope.yoursignup = function () {
-
 
         $location.path("/signup");
 
